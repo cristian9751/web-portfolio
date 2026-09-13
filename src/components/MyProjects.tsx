@@ -8,10 +8,10 @@ export default function MyProjects() {
   return <>
     <section id="projects" className={"mx-auto w-full bg-card max-w-7xl flex flex-col  md:p-20 rounded-xl"}>
       <div className={"flex flex-col"}>
-        <p className={"mx-auto text-4xl"}> Some of my work</p>
+        <p className={"mx-auto md:text-4xl text-2xl"}> Projects I've contributed to</p>
         <h5 className={" mx-auto "}>Working in modern web applications</h5>
       </div>
-      <div className={"mx-auto flex flex-col py-2 md:py-10"}>
+      <div className={"mx-auto flex flex-col py-5 md:py-10"}>
         <div className={"flex flex-col md:flex-row md:justify-between items-center"}>
           <a href={"https://vcrew-center.com"}>
             <ProjectImage highContrast={false}>

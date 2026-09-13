@@ -6,11 +6,9 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu.tsx"
 import type { ReactNode } from "react"
+import type { MenuItem} from "@/types/MenuItem.ts"
+import HamburgerMenu from "@/components/ui/HamburgerMenu.tsx"
 
-type MenuItem = {
-  label: string,
-  href : string
-}
 const MenuItems : MenuItem[] = [
   {
     label: "About me",
@@ -32,8 +30,8 @@ type LayoutProps = {
 export default function Layout({children} : LayoutProps ) {
   return (
     <>
-
-      <NavigationMenu className={" fixed w-full max-w-none bg-sidebar md:p-4 md:flex hidden z-[200]"}>
+      <HamburgerMenu menuItems={MenuItems} className={"md:hidden"}></HamburgerMenu>
+      <NavigationMenu className={" fixed w-full max-w-none bg-sidebar md:p-4 md:flex hidden md:z-[200]"}>
         <NavigationMenuList>
           {MenuItems.map((item : MenuItem) => (
             <NavigationMenuItem>
@@ -46,7 +44,7 @@ export default function Layout({children} : LayoutProps ) {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <main className={"flex flex-col py-5  md:py-40 gap-20 md:gap-30 z-[100]"}>
+      <main className={"flex flex-col py-5  md:py-40 gap-20 md:gap-30 md:z-[100]"}>
         {children}
       </main>
     </>
