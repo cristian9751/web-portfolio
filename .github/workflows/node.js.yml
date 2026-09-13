@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npx vite build --if-present
+    - run: npx vite build
     - name: Upload static files as artifact
       id: deployment
       uses:  actions/upload-pages-artifact@v3
